@@ -1,5 +1,6 @@
 import os
 import json
+import random
 
 # Determine the path to the data file within the package
 DATA_PATH = os.path.join(os.path.dirname(__file__), 'data.json')
@@ -24,8 +25,12 @@ class Magic8Ball:
     @staticmethod
     def fortune_by_category(category: str) -> str:
         """Return a fortune from the specified category (e.g., 'love', 'career', 'health')."""
-        # TODO
-        return
+        # Retrieve the fortunes under specified category
+        fortunes = DATA.get("categories", {}).get(category.lower())
+        if fortunes:
+            return random.choice(fortunes)
+        else:
+            return f"Invalid Category chosen: {category}"
 
     @staticmethod
     def daily_by_birth_month(month: str) -> str:
@@ -34,3 +39,4 @@ class Magic8Ball:
         """
         # TODO
         return
+
