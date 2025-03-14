@@ -41,7 +41,7 @@ def main(*args):
         print("     - Love")
         print("     - Career")
         print("     - Health")
-        category = input("Enter choice: ").strip().lower()
+        category = input("Enter choice: ").strip()
         fortune = Magic8Ball.fortune_by_category(category)
     elif choice == '4':
         # TODO
