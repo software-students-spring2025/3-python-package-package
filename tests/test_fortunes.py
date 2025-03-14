@@ -1,5 +1,5 @@
 import pytest
-from src.magic8ball.fortunes import Magic8Ball  # Ensure correct import
+from src.magic8ball.fortunes import Magic8Ball
 
 class TestMagic8Ball:
     """Test suite for Magic8Ball's daily_by_birth_month function."""
