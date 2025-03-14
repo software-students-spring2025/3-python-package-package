@@ -2,7 +2,40 @@ import pytest
 from src.magic8ball.fortunes import Magic8Ball  # Ensure correct import
 
 class TestMagic8Ball:
-    """Test suite for Magic8Ball's daily_by_birth_month function."""
+    """Test suite for Magic8Ball's category function."""
+
+    # Test suite for Magic8Ball's category function.
+
+    @pytest.mark.parametrize("category", ["love", "career", "health"])
+    def test_valid_category(self, category):
+        """Test that a valid category returns a fortune from the correct list."""
+        fortune = Magic8Ball.fortune_by_category(category)
+        assert fortune in Magic8Ball.DATA["categories"][category]
+
+    @pytest.mark.parametrize("category, expected_key", [
+        ("lOvE", "love"),
+        ("cAReer", "career"),
+        ("HeaLTH", "health"),
+    ])
+    def test_case_insensitivity(self, category, expected_key):
+        """Test that the function handles different cases correctly."""
+        fortune = Magic8Ball.fortune_by_category(category)
+        assert fortune in Magic8Ball.DATA["categories"][expected_key]
+
+    @pytest.mark.parametrize("invalid_category", ["cHase", "apple", "1234", ""])
+    def test_invalid_category(self, invalid_category):
+        """Test that an invalid category raises a ValueError."""
+        with pytest.raises(ValueError, match=r"Invalid Category: Please enter a valid category \('love', 'career', 'health'\)"):
+            Magic8Ball.fortune_by_category(invalid_category)
+
+    @pytest.mark.parametrize("non_string_input", [123, None, 5.5, ["love"], {"category": "love"}])
+    def test_non_string_input(self, non_string_input):
+        """Test that non-string inputs raise a TypeError."""
+        with pytest.raises(TypeError, match="Invalid input: The category must be a string."):
+            Magic8Ball.fortune_by_category(non_string_input)
+    
+
+    # Test suite for Magic8Ball's daily_by_birth_month function.
 
     @pytest.mark.parametrize("month", ["January", "February", "March"])
     def test_valid_month(self, month):

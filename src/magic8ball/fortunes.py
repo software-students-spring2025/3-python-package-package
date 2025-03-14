@@ -8,7 +8,6 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), 'data.json')
 with open(DATA_PATH, 'r') as f:
     DATA = json.load(f)
 
-
 class Magic8Ball:
 
     DATA = DATA
@@ -27,9 +26,17 @@ class Magic8Ball:
 
     @staticmethod
     def fortune_by_category(category: str) -> str:
-        """Return a fortune from the specified category (e.g., 'love', 'career', 'health')."""
-        # TODO
-        return
+        """Return a fortune from the specified category ('love', 'career', 'health')."""
+        
+        if not isinstance(category,str):
+            raise TypeError("Invalid input: The category must be provided as a string.")
+        
+        # Retrieve the fortunes under specified category
+        fortunes = DATA.get("categories", {}).get(category.lower())
+        if fortunes:
+            return random.choice(fortunes)
+        else:
+            raise ValueError("Invalid Category: Please enter a valid category ('love', 'career', 'health')")
 
     @staticmethod
     def daily_by_birth_month(month: str) -> str:
