@@ -5,6 +5,9 @@ verify_ssl = true
 
 [requires]
 python_version = "3.9"
+pytest = "*"
+build = "*"
+magic8ball = {file = ".", editable = true}
 
 [packages]
 pytest = "*"
