@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "08d870d111cbb23aea9620e33c8c3853e9d94e125894e9220c6d70cd9f1e9b8a"
+            "sha256": "f5019052a73a6ceaddb89a82b59e885409380c38699d691ec6d23434b8e44828"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -48,6 +48,10 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==2.0.0"
+        },
+        "magic8ball": {
+            "editable": true,
+            "file": "."
         },
         "packaging": {
             "hashes": [
