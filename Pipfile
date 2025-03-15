@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 pytest = "*"
 build = "*"
-magic8ball = {file = ".", editable = true}
+magic8ball-se = {file = ".", editable = true}
 
 [dev-packages]
 

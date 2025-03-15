@@ -6,7 +6,7 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.9", "3.11"]
     steps:
       - uses: actions/checkout@v4
       - name: Install Python, pipenv and Pipfile packages
@@ -23,6 +23,7 @@ jobs:
           pipenv run python -m pytest
 
   deliver:
+    if: github.ref == 'refs/heads/main'
     needs: [build]
     runs-on: ubuntu-latest
     timeout-minutes: 5
