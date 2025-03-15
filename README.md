@@ -1,6 +1,6 @@
 # Magic8Ball
 
-[![Build Status](https://github.com/software-students-spring2025/3-python-package-package/actions/workflows/python-package.yml/badge.svg)](https://github.com/software-students-spring2025/3-python-package-package/actions/workflows/build.yaml/badge.svg)
+[![Build Status](https://github.com/software-students-spring2025/3-python-package-package/actions/workflows/build.yaml/badge.svg)](https://github.com/software-students-spring2025/3-python-package-package/actions/workflows/build.yaml/badge.svg)
 
 A lighthearted fortune-telling package that returns fortunes in various styles.
 
