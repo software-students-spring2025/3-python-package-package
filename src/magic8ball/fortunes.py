@@ -21,8 +21,16 @@ class Magic8Ball:
     @staticmethod
     def personalized_fortune(name: str) -> str:
         """Return a personalized fortune including the given name."""
-        # TODO
-        return
+        
+        if not isinstance(name, str):
+            raise TypeError("Invalid input: The name must be provided as a string.")
+
+        # Retrieve a random fortune from the "personalized" category
+        fortunes = DATA.get("personalized")
+
+        if fortunes:
+            return f"{name}, {random.choice(fortunes)}"
+
 
     @staticmethod
     def fortune_by_category(category: str) -> str:
