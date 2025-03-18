@@ -13,7 +13,7 @@ Magic8Ball is a lighthearted fortune-telling package designed with rigorous soft
 
 ## Project Links
 
-- **PyPI Package:** [https://pypi.org/project/magic8ball-se/](https://pypi.org/project/magic8ball-se/)
+- **PyPI Package:** [https://pypi.org/project/magic8ball/](https://pypi.org/project/magic8ball/)
 - **Repository:** [GitHub Repository](https://github.com/software-students-spring2025/3-python-package-package.git)
 - **Bug Tracker:** [GitHub Issues](https://github.com/software-students-spring2025/3-python-package-package/issues)
 
@@ -59,7 +59,7 @@ pipenv install --dev
 Once installed, you can also install the package via pip if you have downloaded the package artifacts from PyPI:
 
 ```bash
-pip install magic8ball-se
+pip install magic8ball
 ```
 
 ## Running the Example Program
