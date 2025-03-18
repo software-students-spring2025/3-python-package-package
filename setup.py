@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='magic8ball-se',
-    version='0.0.2',
+    version='0.0.1',
     author='Team Package',
     description='A lighthearted fortune-telling package',
     packages=find_packages(),
