@@ -3,8 +3,9 @@ In Python packages, this file called __main__.py is run when the package is run
 directly from command line, as opposed to importing it into another program.
 """
 
-from fortunes import Magic8Ball
+from .fortunes import Magic8Ball
 import os
+
 
 def main(*args):
     """
@@ -12,7 +13,7 @@ def main(*args):
     """
 
     os.system('cls' if os.name == 'nt' else 'clear')
-    
+
     header = r"""
       .--------------------------.
      /                            \
@@ -28,7 +29,7 @@ def main(*args):
     print(" 3   - Based on a category")
     print(" 4   - Based on your birthday")
     print("-" * 40)
-    
+
     choice = input("Input the number corresponding to your choice: ").strip()
 
     if choice == '1':
@@ -66,7 +67,8 @@ def main(*args):
     {fortune}
     """
     print(footer)
-    
+
+
 if __name__ == "__main__":
     # run the main function
     main()
