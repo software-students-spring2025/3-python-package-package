@@ -99,8 +99,8 @@
       "Embrace change—it will bring you amazing opportunities."
     ]
   },
-  "personality": {
-    "Anxious": [
+  "personalities": {
+    "anxious": [
       "Relax, take a deep breath—things will fall into place at the right time.",
       "Your overthinking will not change the outcome, but your confidence will.",
       "Trust the process—what worries you today will be a distant memory soon.",
@@ -112,7 +112,7 @@
       "Good things are coming—let go of the worry.",
       "You are more capable than you think—trust yourself."
     ],
-    "Kind": [
+    "kind": [
       "Your kindness is a ripple that will come back to you tenfold.",
       "A small act of generosity today will bring you unexpected joy tomorrow.",
       "The world notices your goodness, even when it goes unspoken.",
@@ -124,7 +124,7 @@
       "Compassion is your greatest strength—embrace it fully.",
       "The love you spread will always come back to you."
     ],
-    "Rude": [
+    "rude": [
       "Your sharp words may cut, but they also build walls—choose wisely.",
       "A little patience and kindness will take you further than you think.",
       "The energy you give out is the energy you will receive—be mindful of it.",
