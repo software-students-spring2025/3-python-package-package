@@ -1,5 +1,5 @@
 import pytest
-from src.magic8ball.fortunes import Magic8Ball
+from src.magic8ballfortunes.fortunes import Magic8Ball
 
 
 class TestMagic8Ball:
