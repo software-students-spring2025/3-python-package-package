@@ -96,3 +96,61 @@ class TestMagic8Ball:
         month = "January"
         for _ in range(10):  # Run multiple times to verify randomness
             assert Magic8Ball.daily_by_birth_month(month) in Magic8Ball.DATA["birthdays"][month]
+
+            
+    """Tests for the fortune_by_personality method."""
+
+    @pytest.mark.parametrize("valid_personality", ["anxious", "kind", "rude"])
+    def test_valid_personality(self, valid_personality):
+        """
+        Test that a valid personality type returns a fortune
+        from the correct list in DATA["personalities"].
+        """
+        fortune = Magic8Ball.fortune_by_personality(valid_personality)
+        # Ensure the returned fortune is one of the possible lines for that personality
+        assert fortune in Magic8Ball.DATA["personalities"][valid_personality]
+
+    @pytest.mark.parametrize(
+        "input_val, expected_key",
+        [
+            ("Anxious", "anxious"),
+            ("KIND", "kind"),
+            ("RuDe", "rude"),
+        ],
+    )
+    def test_case_insensitivity(self, input_val, expected_key):
+        """
+        Test that the function is case-insensitive and returns a fortune
+        from the correct sub-dictionary in DATA["personalities"].
+        """
+        fortune = Magic8Ball.fortune_by_personality(input_val)
+        assert fortune in Magic8Ball.DATA["personalities"][expected_key]
+
+    @pytest.mark.parametrize("invalid_personality", ["", "123", "joyful", "RUDEE", "Kindness"])
+    def test_invalid_personality(self, invalid_personality):
+        """
+        Test that providing an unrecognized personality raises a ValueError.
+        """
+        with pytest.raises(ValueError, match="Invalid Personality Type"):
+            Magic8Ball.fortune_by_personality(invalid_personality)
+
+    @pytest.mark.parametrize("non_string_input", [123, 3.14, None, ["kind"], {"personality": "rude"}])
+    def test_non_string_input(self, non_string_input):
+        """
+        Test that providing a non-string raises a TypeError.
+        """
+        with pytest.raises(TypeError, match="Invalid input: The personality type must be a string."):
+            Magic8Ball.fortune_by_personality(non_string_input)
+
+    def test_fortune_by_personality_monkeypatch(self, monkeypatch):
+        """
+        Test that the function calls random.choice by monkeypatching
+        it to return a known string.
+        """
+        fixed_fortune = "A special fortune just for you."
+        import random
+
+        monkeypatch.setattr(random, "choice", lambda x: fixed_fortune)
+
+        fortune = Magic8Ball.fortune_by_personality("anxious")
+        assert fortune == fixed_fortune

@@ -71,3 +71,26 @@ class Magic8Ball:
             return random.choice(birthdays[month])
         else:
             raise ValueError("Invalid month: Please enter a valid month name (e.g., 'January', 'February').")
+    
+
+    @staticmethod
+    def fortune_by_personality(personality_type: str) -> str:
+        """
+        Return a fortune from the specified personality type.
+        This function looks up fortunes under the "personalities" key in data.json.
+
+        Raises:
+            TypeError: If the input is not a string.
+            ValueError: If the personality type is not recognized.
+        """
+        if not isinstance(personality_type, str):
+            raise TypeError("Invalid input: The personality type must be a string.")
+
+        personalities = DATA.get("personalities", {})
+        # Normalize case, just like 'categories' does:
+        personality_type_lower = personality_type.lower()
+
+        if personality_type_lower in personalities:
+            return random.choice(personalities[personality_type_lower])
+        else:
+            raise ValueError("Invalid Personality Type: Please provide a valid personality type (e.g. 'introvert', 'extrovert').")
