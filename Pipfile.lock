@@ -51,7 +51,8 @@
         },
         "magic8ballfortunes": {
             "editable": true,
-            "file": "."
+            "file": ".",
+            "markers": "python_version >= '3.7'"
         },
         "packaging": {
             "hashes": [
