@@ -13,7 +13,7 @@ Magic8Ball is a lighthearted fortune-telling package designed with rigorous soft
 
 ## Project Links
 
-- **PyPI Package:** [https://pypi.org/project/magic8ball/](https://pypi.org/project/magic8ball/)
+- **PyPI Package:** [https://pypi.org/project/magic8ballfortunes/](https://pypi.org/project/magic8ballfortunes/)
 - **Repository:** [GitHub Repository](https://github.com/software-students-spring2025/3-python-package-package.git)
 - **Bug Tracker:** [GitHub Issues](https://github.com/software-students-spring2025/3-python-package-package/issues)
 
@@ -24,7 +24,7 @@ Magic8Ball provides four functions that deliver different types of fortunes:
 - **tell_fortune()**  
   *Returns a random general fortune.*  
   ```python
-  from magic8ball.fortunes import Magic8Ball
+  from magic8ballfortunes.fortunes import Magic8Ball
   print(Magic8Ball.tell_fortune())
   ```
 
@@ -59,7 +59,7 @@ pipenv install --dev
 Once installed, you can also install the package via pip if you have downloaded the package artifacts from PyPI:
 
 ```bash
-pip install magic8ball
+pip install magic8ballfortunes
 ```
 
 ## Running the Example Program
@@ -67,7 +67,7 @@ pip install magic8ball
 An example program is provided within the package. To run the interactive fortune-telling interface from the command line, execute:
 
 ```bash
-python -m magic8ball
+python -m magic8ballfortunes
 ```
 
 This will clear your screen and prompt you to choose a type of fortune. (Note: Options 2 and 4 are marked with TODOs in the current version.)
