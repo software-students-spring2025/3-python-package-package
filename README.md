@@ -46,15 +46,25 @@ Magic8Ball provides four functions that deliver different types of fortunes:
   print(Magic8Ball.daily_by_birth_month("March"))
   ```
 
-> **Note:** While `tell_fortune()` does not take an argument (since it always returns a general fortune), the other three functions accept parameters that directly influence their behavior.
+- **fortune_by_personality(personality_type: str)** 
+  *Returns a fortune based on the specified personality type (e.g., 'anxious', 'kind', 'rude').*
+  ```python
+  print(Magic8Ball.fortune_by_personality("anxious"))
+  ```
+
 
 ## Installation
 
-Magic8Ball is managed with pipenv. To set up your virtual environment and install the package along with its development dependencies, run:
+Magic8Ball is managed with [Pipenv](https://pipenv.pypa.io/en/latest/). To set up your virtual environment and install the package along with its development dependencies:
 
-```bash
-pipenv install --dev
-```
+1. Make sure you are **inside** the Pipenv virtual environment. If you haven’t already, run:
+   ```bash
+   pipenv shell
+   ```
+2. Install development dependencies by running:
+    ```bash
+    pipenv install --dev
+    ```
 
 Once installed, you can also install the package via pip if you have downloaded the package artifacts from PyPI:
 
