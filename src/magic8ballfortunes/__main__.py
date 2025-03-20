@@ -35,8 +35,7 @@ def main(*args):
     if choice == '1':
         fortune = Magic8Ball.tell_fortune()
     elif choice == '2':
-        # TODO
-        pass
+        fortune = Magic8Ball.personalized_fortune(input("Enter your name: "))
     elif choice == '3':
         print("Enter a category:")
         print("     - Love")
@@ -45,8 +44,7 @@ def main(*args):
         category = input("Enter choice: ").strip()
         fortune = Magic8Ball.fortune_by_category(category)
     elif choice == '4':
-        # TODO
-        pass
+        fortune = Magic8Ball.daily_by_birth_month(input("Enter month (i.e. December): ").strip())
     else:
         fortune = "Invalid choice. Please try again."
 

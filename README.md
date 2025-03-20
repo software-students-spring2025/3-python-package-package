@@ -80,7 +80,7 @@ An example program is provided within the package. To run the interactive fortun
 python -m magic8ballfortunes
 ```
 
-This will clear your screen and prompt you to choose a type of fortune. (Note: Options 2 and 4 are marked with TODOs in the current version.)
+This will clear your screen and prompt you to choose a type of fortune.
 
 ## Running Tests
 
